@@ -6,18 +6,18 @@ import './App.css'
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer'
-import Login from './components/Login/Login';
+import Login from './components/LoginView/Login';
 import Home from './components/HomeView/Home';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <Switch>
-       <Route exact path='/' component={Home}/>
-      <Route exact path='/login' component={Login}/>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/login' component={Login} />
       </Switch>
-      <Footer/>
+      <Footer />
       {/* <img src={logo} />
       <Link to="/">Home</Link><br />
       <Link to="/products">Products</Link><br />
