@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import TypingEffect from "../TypingEffect/TypingEffect";
+import CourseCard from "../CourseCard/CourseCard";
 import './Home.css';
 import image1 from "../../assets/img/image-home-banner.jpg"
+import { Link } from "react-router-dom";
 
 function Home() {
     useEffect(() => {
@@ -27,8 +29,14 @@ function Home() {
                     <h4>Ultimos lanzamientos</h4>
                 </div>
                 <div className="home-last-courses-cards">
-                
+                    <CourseCard />
+                    <CourseCard />
+                    <CourseCard />
+                    <CourseCard />
                 </div>
+                <Link to="/cursos">
+                    <button>Ver más</button>
+                </Link>
             </div>
         </div>
     );
