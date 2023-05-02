@@ -1,0 +1,54 @@
+.Home {
+    height: 100vh;
+}
+
+.home-banner {
+    position: relative;
+}
+
+.home-banner-text {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translate(0, -50%);
+    z-index: 1;
+}
+
+.home-banner-image {
+    filter: blur(.5px);
+    -webkit-filter: blur(.5px);
+}
+
+.home-banner-image img {
+    width: 100%;
+}
+
+.home-banner-image::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to top, #fff, transparent 50%);
+}
+
+.home-presentation {
+    text-align: center;
+    padding: 10px;
+}
+
+.home-presentation h2 {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.home-presentation h3 {
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 400;
+}
