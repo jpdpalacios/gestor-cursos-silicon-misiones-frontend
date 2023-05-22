@@ -1,12 +1,10 @@
 import './Login.css';
-import logo from '../../logo.svg'
 
 function Login() {
     return (
         <div>
             <div>
                 <div>
-                    <img src={logo} />
                 </div>
                 <div>
                     <h1>Hola de nuevo</h1>
