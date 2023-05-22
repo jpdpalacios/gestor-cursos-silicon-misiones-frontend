@@ -1,13 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import TypingEffect from "../TypingEffect/TypingEffect";
 import CourseCard from "../CourseCard/CourseCard";
 import './Home.css';
 import image1 from "../../assets/img/image-home-banner.jpg"
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
 
 function Home() {
+    const [courses, setCourses] = useState([]);
+
+    const API_URL_COURSE = 'http://localhost:8080/api/courses';
+
+    const fetchData = async (apiUrl, setData) => {
+        const response = await axios.get(apiUrl);
+        setData(response.data);
+    };
     useEffect(() => {
         document.title = 'Silicon Miones | Inicio';
+        fetchData(API_URL_COURSE, setCourses);
     }, []);
     const words = ["inovación", "crecimiento", "el futuro", "esfuerzo", "trabajo"];
     return (
@@ -29,10 +40,15 @@ function Home() {
                     <h4>Ultimos lanzamientos</h4>
                 </div>
                 <div className="home-last-courses-cards">
-                    <CourseCard />
-                    <CourseCard />
-                    <CourseCard />
-                    <CourseCard />
+                    {courses.data && courses.data.slice(-4).map((course) => (
+                        <CourseCard
+                            key={course.id}
+                            name={course.nombre}
+                            image={course.imagen}
+                            year={course.anio}
+                            description={course.descripcion}
+                        />
+                    ))}
                 </div>
                 <Link to="/cursos">
                     <button>Ver más</button>
