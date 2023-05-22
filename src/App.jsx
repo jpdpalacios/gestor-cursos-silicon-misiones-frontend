@@ -5,9 +5,11 @@ import './Normalize.css'
 import './App.css'
 
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer'
-import Login from './components/LoginView/Login';
 import Home from './components/HomeView/Home';
+import CoursesView from './components/CoursesView/CoursesView';
+import Login from './components/LoginView/Login';
+import Footer from './components/Footer/Footer'
+import CourseForm from './components/CourseForm/CourseForm'
 
 function App() {
   return (
@@ -16,6 +18,11 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
+        <Route exact path='/cursos' component={CoursesView} />
+        <Route exact path='/cursos/crear' component={CourseForm} />
+        <Route>
+          <NotFound/>
+        </Route>
       </Switch>
       <Footer />
       {/* <img src={logo} />
